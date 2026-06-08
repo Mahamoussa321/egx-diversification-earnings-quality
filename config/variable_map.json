@@ -1,0 +1,75 @@
+{
+  "paths": {
+    "diversification_excel": "data/raw/egx_diversification_existing_data.xlsx",
+    "governance_excel": "data/raw/egx_governance_variables.xlsx",
+    "daily_trading_excel_or_csv": "data/raw/Amihud - Stock Liquidity.xlsx",
+    "processed_panel_csv": "data/processed/analysis_panel.csv",
+    "outputs_tables": "outputs/tables",
+    "outputs_figures": "outputs/figures"
+  },
+  "sheet_names": {
+    "main_panel": "Data",
+    "governance": null,
+    "daily_trading": "Amihud"
+  },
+  "id_columns": {
+    "firm_id": "id",
+    "firm_name": "Firm",
+    "year": "Year",
+    "industry": "industry"
+  },
+  "research_variables": {
+    "diversification": {
+      "preferred_column": "DIV",
+      "hhi_column": "HHI",
+      "sales_segment_columns": [],
+      "construction_note": "Use DIV = 1 - HHI when HHI is concentration. Alternatively, use entropy if segment sales are available. If segment sales are absent, the reproducibility code creates a transparent count-based proxy using Number of branches and Number of production lines: DIV = 1 - 1/(branches + lines). Replace with segment-sales HHI for publication."
+    },
+    "information_asymmetry": {
+      "preferred_column": "AMIHUD",
+      "daily_return_column": "daily_return",
+      "daily_value_traded_column": "daily_value_traded",
+      "construction_note": "Amihud = mean(abs(return) / value_traded) by firm-year; AMIHUD is scaled by 1e9 for readable regression coefficients."
+    },
+    "earnings_quality": {
+      "preferred_column": "EQ",
+      "discretionary_accruals_column": "DA",
+      "existing_earnings_management_column": "EAR",
+      "construction_note": "If using absolute discretionary accruals, EQ = -abs(DA); higher EQ means better quality. If EAR already means earnings management, EQ = -abs(EAR)."
+    },
+    "corporate_governance": {
+      "preferred_column": "CGQ",
+      "components": {
+        "board_independence": "Board Independence",
+        "board_size": "Board Size",
+        "audit_committee_independence": "Audit Committee Independence",
+        "ceo_duality": "CEO Duality",
+        "institutional_ownership": "Institutional Ownership"
+      },
+      "reverse_components": [
+        "ceo_duality"
+      ],
+      "construction_note": "Standardize each component; reverse CEO duality so larger score means stronger governance; average available standardized components."
+    }
+  },
+  "control_variables": {
+    "firm_size": "size",
+    "leverage": "Leverage",
+    "firm_age": "age",
+    "roa": "ROA",
+    "roe": "ROE",
+    "sales_growth": "Sales Growth",
+    "cash_flow": "Cash Flow",
+    "industry_effects": "industry",
+    "year_effects": "year"
+  },
+  "analysis_options": {
+    "winsorize_limits": [
+      0.01,
+      0.99
+    ],
+    "cluster_by": "firm_id",
+    "bootstrap_iterations": 0,
+    "random_seed": 2026
+  }
+}

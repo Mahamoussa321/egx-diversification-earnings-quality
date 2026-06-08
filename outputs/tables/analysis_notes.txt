@@ -1,0 +1,4 @@
+H1 formula: EQ ~ DIV + size + Leverage + age + ROA + ROE + Q('Sales Growth') + C(firm_id) + C(year)
+H2 formula: AMIHUD ~ DIV + size + Leverage + age + ROA + ROE + Q('Sales Growth') + C(firm_id) + C(year)
+H3-H5 formula: EQ ~ DIV + AMIHUD + CGQ + AMIHUD_x_CGQ + size + Leverage + age + ROA + ROE + Q('Sales Growth') + C(firm_id) + C(year)
+H6 bootstrap skipped because bootstrap_iterations is set to 0. Use a positive value after confirming the final analysis sample.

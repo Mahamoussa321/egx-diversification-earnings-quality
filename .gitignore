@@ -1,0 +1,30 @@
+# Private data: keep locally, do not upload to GitHub
+data/raw/
+data/processed/
+data/**/*.xlsx
+data/**/*.xls
+data/**/*.csv
+
+# Manuscripts / paper files: keep locally, do not upload
+docs/*.docx
+docs/*.pdf
+manuscript/
+paper/
+submission/
+*.docx
+*.pdf
+
+# Python environment and cache
+.venv/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# Local system files
+.DS_Store
+Thumbs.db
+
+# Private/local helper scripts only
+scripts/private_*.py
+scripts/local_*.py
+private_scripts/

@@ -1,0 +1,5 @@
+Sales-based HHI was not available; used count-based proxy DIV = 1 - 1/(branches + production_lines). Replace with segment-sales HHI for publication.
+Constructed DA/EQ using pooled Modified Jones approximation; N used for accrual model = 463.
+Governance workbook processed. Matched 17 unique accounting firms and 68 firm-year rows.
+Governance values merged into main panel for 63 firm-year observations.
+Amihud workbook processed. AMIHUD matched for 337 firm-year observations.
